@@ -17,6 +17,11 @@ export const admin_info = createSlice({
     name: 'admin',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
+     //  // ❌ ERROR: mutates state, but also returns new array size!
+    //  brokenReducer: (state, action) => state.push(action.payload),
+    //  // ✅ SAFE: the `void` keyword prevents a return value
+    //  fixedReducer1: (state, action) => void state.push(action.payload),
+    //  // ✅ SAFE: curly braces make this a function body and no return
   reducers: {
       set_admin_infor :( state, action : PayloadAction<admin_infor>) =>{
          state.admin_adress = action.payload.admin_adress;
